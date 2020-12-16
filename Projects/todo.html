@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>My Todo List app</title>
+  <link rel="stylesheet" href="styletodo.css">
+  <!--<script src="script.js"></script>-->
+</head>
+ <script>
+ 	function getValue() {
+    	// Sélectionner l'élément input et récupérer sa valeur
+    	var input = document.getElementById("input").value;
+
+    	// Afficher la valeur
+    	document.getElementById("demo").innerHTML += '<div class="item"><input type="checkbox"><p>' + input + '</p></div>' ;
+//    	return input;
+	}
+	function removeElement() {
+	  // Retire tous les elements de la liste
+    var element = document.getElementById("demo");
+//    	element.parentNode.removeChild(element);
+		element.remove();
+	}
+</script>
+<body>
+  <h1>To-Do List de Jonathan</h1>
+  <p>Ceci est ta liste de tâche à accomplir, remplis-là !</p>
+  <form>
+    <input id = "input" type="text" placeholder="Entrez une tâche">
+    <input type="button" id="bouton" value="Ajouter" onclick="getValue()">
+    <input type="button" id="bouton" value="Effacer tout" onclick="removeElement()">
+  </form>
+  <div class="inbox">
+    <div id="demo">
+    </div>
+  </div>
+
+
+</body>
+</html>
